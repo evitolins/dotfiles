@@ -1,0 +1,7 @@
+[user]
+	name = Eriks Vitolins
+	email = evitolins@gmail.com
+[mergetool]
+	keepBackup = true
+[core]
+	excludesfile = /Users/ev/.gitignore_global
