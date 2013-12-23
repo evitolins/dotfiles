@@ -38,7 +38,7 @@ install_zsh () {
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone http://github.com/michaeljsmalley/oh-my-zsh.git
+        git clone http://github.com/evitolins/oh-my-zsh.git
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
@@ -59,4 +59,12 @@ else
 fi
 }
 
-install_zsh
+# @http://stackoverflow.com/questions/226703/how-do-i-prompt-for-input-in-a-linux-shell-script
+while true; do
+    read -p "Do you wish to install zsh?" yn
+    case $yn in
+        [Yy]* ) install_zsh; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes[y] or no[n].";;
+    esac
+done
