@@ -9,8 +9,9 @@
 
 ########## Variables
 
+timestamp=$(date +%Y%m%d_%H%M%S)
 dir=~/.dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles_old/$timestamp  # old dotfiles backup directory
 files=".zshrc .bashrc .bash_profile .gitconfig .gitignore_global .gitk"    # list of files/folders to symlink in homedir
 
 ##########
