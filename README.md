@@ -16,6 +16,22 @@ Install Extras
 -------------------------------------------------------------------------------
 Until a more robust install script is created, you can use these commands to extend your profile
 
+### Apps & Shell Cmds
+__Homebrew__
+
+There are scripts to both backup and restore the homebrew environment.
+
+- Backup
+
+        ./backup-homebrew.sh >restore-homebrew.sh
+        chmod +x restore-homebrew.sh
+
+
+- Restore
+
+        ./restore-homebrew.sh
+
+
 ### Aliases
 __Sublime Text__
 
