@@ -21,8 +21,8 @@ __Homebrew__
 
 There are scripts to both backup and restore the homebrew environment.
 
-- Backup `homebrew/homebrew_backup.sh`
-- Restore `homebrew/homebrew_restore.sh`
+- Backup `homebrew/backup.sh`
+- Restore `homebrew/restore.sh`
 
 
 ### Aliases
