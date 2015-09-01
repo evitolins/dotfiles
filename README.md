@@ -16,6 +16,18 @@ Install Extras
 -------------------------------------------------------------------------------
 Until a more robust install script is created, you can use these commands to extend your profile
 
+### Add Github Token
+This allows Github API access at a faster rate.
+
+1. Obtain Github token from `https://github.com/settings/tokens`
+2. Add env var to login script `~/.zshrc`
+
+```
+# Github Token
+export HOMEBREW_GITHUB_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+
 ### Apps & Shell Cmds
 __Homebrew__
 
