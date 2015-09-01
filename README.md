@@ -42,7 +42,11 @@ There are scripts to both backup and restore the homebrew environment.
 ### Aliases
 __Sublime Text__
 
+	# Root Installation
     sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/st
+
+    # User Installation (brew cask) 
+    sudo ln -s "/Users/${USER}/Applications/Sublime Text 2.app" /usr/bin/st
 
 
 ### Themes & Fonts
