@@ -5,3 +5,4 @@ nvalt
 tower
 iterm2
 sequel-pro
+sublime-text3
