@@ -1,3 +1,4 @@
 caskroom/cask
+caskroom/versions
 homebrew/dupes
 homebrew/php
