@@ -3,3 +3,5 @@ divvy
 kaleidoscope
 nvalt
 tower
+iterm2
+sequel-pro
