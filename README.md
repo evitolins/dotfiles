@@ -8,7 +8,7 @@ Installation
 ```bash
 git clone https://github.com/evitolins/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-.buildSymlinks.sh
+./buildSymlinks.sh
 ```
 
 
@@ -23,6 +23,8 @@ There are scripts to both backup and restore the homebrew environment.
 
 - Backup `homebrew/backup.sh`
 - Restore `homebrew/restore.sh`
+
+> **brew-cask** installation requires **Xcode** to be previously installed. Make sure to install a version that is supported by your current OSX
 
 
 ### Aliases
