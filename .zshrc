@@ -46,4 +46,4 @@ plugins=(git git-flow sublime osx brew bower Composer autojump)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin
+export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH

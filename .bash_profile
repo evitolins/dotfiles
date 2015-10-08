@@ -12,3 +12,6 @@ fi
 
 # Added for "AutoJump"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# Homebrew Suggestion for conflicts
+export PATH=/usr/local/bin:$PATH
