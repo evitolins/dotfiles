@@ -6,3 +6,4 @@ tower
 iterm2
 sequel-pro
 sublime-text3
+google-chrome
