@@ -45,5 +45,9 @@ plugins=(git git-flow sublime osx brew bower Composer autojump)
 
 source $ZSH/oh-my-zsh.sh
 
+# Aliases
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
 # Customize to your needs...
 export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH
