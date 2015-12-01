@@ -1,5 +1,5 @@
 brew-cask
-composer
+homebrew/php/composer
 freetype
 gettext
 git
