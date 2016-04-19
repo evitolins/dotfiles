@@ -51,3 +51,71 @@ alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall 
 
 # Customize to your needs...
 export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH
+
+
+
+# ------------------------------------
+# Docker alias and function
+# ------------------------------------
+
+# Start default Docker Machine
+dmcreate() { docker-machine create --driver virtualbox default }
+dmstart() { docker-machine start default }
+
+# Set Docker Machine Env
+dmenv() { eval "$(docker-machine env default)" }
+
+# Launch Docker Machine
+dmhttp() { open http://$(docker-machine ip default)$1 }
+dmhttps() { open https://$(docker-machine ip default)$1 }
+
+
+# Get latest container ID
+alias dl="docker ps -l -q"
+
+# Get container process
+alias dps="docker ps"
+
+# Get process included stop container
+alias dpa="docker ps -a"
+
+# Get images
+alias di="docker images"
+
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="docker run -i -t -P"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="docker exec -i -t"
+
+# Stop all containers
+dstop() { docker stop $(docker ps -a -q); }
+
+# Remove all containers
+drm() { docker rm $(docker ps -a -q); }
+
+# Stop and Remove all containers
+alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Remove all images
+dri() { docker rmi $(docker images -q); }
+
+# Dockerfile build, e.g., $dbu tcnksm/test
+dbu() { docker build -t=$1 .; }
+
+# Show all alias related docker
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# Attach Container
+dattach() { docker exec -i -t $1 bash }
+
+
+
+# Automaticaly set Docker Machine env in new tabs
+dmenv
