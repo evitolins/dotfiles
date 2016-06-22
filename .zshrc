@@ -103,6 +103,9 @@ drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
+# Remove images
+alias drmi="docker rmi"
+
 # Remove all images
 dri() { docker rmi $(docker images -q); }
 
@@ -115,6 +118,8 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 # Attach Container
 dattach() { docker exec -i -t $1 bash }
 
+# Follow Container Log
+alias dfollow="docker logs --follow"
 
 
 # Automaticaly set Docker Machine env in new tabs
