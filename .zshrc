@@ -49,27 +49,67 @@ source $ZSH/oh-my-zsh.sh
 alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-# Customize to your needs...
-export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH
+# RGB
+alias ssh_public='ssh -i ~/.ssh/rgb_rackspace_rsa01 admin@104.130.140.134'
+alias ssh_staging='ssh -i ~/.ssh/rgb_rackspace_rsa01 root@166.78.145.221'
 
+# Executable PATHS
+# export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH
+export PATH=$PATH:/bin
+export PATH=$PATH:/sbin
+export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/sbin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/deployd/bin
+export PATH=$PATH:/usr/local/git/bin
+export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:~/Library/Python/3.5/bin
+export PATH="$PATH:`yarn global bin`"
+
+
+# Simple python webserver
+function server() {
+    local port="${1:-8000}"
+    open "http://localhost:${port}/"
+    python -m SimpleHTTPServer "$port"
+}
+alias server=server
+
+# ------------------------------------
+# General
+# ------------------------------------
+alias ea='st ~/.zshrc'
+alias sa='source ~/.zshrc'
 
 
 # ------------------------------------
 # Docker alias and function
 # ------------------------------------
 
-# Start default Docker Machine
-dmcreate() { docker-machine create --driver virtualbox default }
-dmstart() { docker-machine start default }
+# ------------------------------------
+# Docker Machine
+# - deprecated in favor of Docker for Mac
+# ------------------------------------
+## Start default Docker Machine
+# dmcreate() { docker-machine create --driver virtualbox default }
+# dmstart() { docker-machine start default }
+# dmrestart() { docker-machine restart default }
 
-# Set Docker Machine Env
-dmenv() { eval "$(docker-machine env default)" }
+## Set Docker Machine Env
+# dmenv() { eval "$(docker-machine env default)" }
 
-# Launch Docker Machine
-dmhttp() { open http://$(docker-machine ip default)$1 }
-dmhttps() { open https://$(docker-machine ip default)$1 }
+## Launch Docker Machine
+# dmhttp() { open http://$(docker-machine ip default)$1 }
+# dmhttps() { open https://$(docker-machine ip default)$1 }
+
+## Automaticaly set Docker Machine env in new tabs
+# dmenv
 
 
+# ------------------------------------
+# Docker
+# ------------------------------------
 # Get latest container ID
 alias dl="docker ps -l -q"
 
@@ -122,5 +162,3 @@ dattach() { docker exec -i -t $1 bash }
 alias dfollow="docker logs --follow"
 
 
-# Automaticaly set Docker Machine env in new tabs
-dmenv
