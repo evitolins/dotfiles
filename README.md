@@ -54,6 +54,13 @@ preference file.
 
 __Patched Fonts for Agnoster Theme__
 
+_Homebrew should install the preferred font `Source Code Pro for Powerline` automatically._
+
+> You may need to choose the font in the iTerm preferences manually.
+
+__Manual Installation__
+If needed, you can install and choose any of the powerline supported fonts.
+
 1. Install Patched Fonts
 ```bash
 git clone https://github.com/powerline/fonts.git
@@ -63,7 +70,6 @@ cd fonts
 2. Update iTerm profile fonts with powerline font
 3. Delete cloned repo unless you need it hanging around.
 
-> You may need to wait for the OS's font cache to reset.
 
 
 ### Others...

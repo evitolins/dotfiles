@@ -6,3 +6,4 @@ sequel-pro
 sublime-text
 google-chrome
 zoomus
+homebrew/cask-fonts/font-source-code-pro-for-powerline
