@@ -1,9 +1,8 @@
-adium
 divvy
 kaleidoscope
-nvalt
-tower
+tower2
 iterm2
 sequel-pro
-sublime-text3
+sublime-text
 google-chrome
+zoomus
