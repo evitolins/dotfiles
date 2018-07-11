@@ -46,12 +46,21 @@ plugins=(git git-flow sublime osx brew bower Composer autojump)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
+
+## Mac
 alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-# RGB
+## RGB
 alias ssh_public='ssh -i ~/.ssh/rgb_rackspace_rsa01 admin@104.130.140.134'
 alias ssh_staging='ssh -i ~/.ssh/rgb_rackspace_rsa01 root@166.78.145.221'
+alias ssh_staging2='ssh -i ~/.ssh/rgb_rackspace_rsa01 dev@23.253.241.161'
+
+alias grab_public_config='scp -i ~/.ssh/rgb_rackspace_rsa01 admin@104.130.140.134:/var/www/rgbnotes/config.php ~/Documents/RGB_configs/config.public.php'
+alias grab_old_staging_config='scp -i ~/.ssh/rgb_rackspace_rsa01 root@166.78.145.221:/var/www/rgbnotes/config.php ~/Documents/RGB_configs/config.OLDstaging.php'
+alias grab_staging_config='scp -i ~/.ssh/rgb_rackspace_rsa01 dev@23.253.241.161:/var/www/rgbnotes/config.php ~/Documents/RGB_configs/config.staging.php'
+
+
 
 # Executable PATHS
 # export PATH=/Users/ev/local/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/deployd/bin:/usr/local/git/bin:$PATH
@@ -67,7 +76,9 @@ export PATH=$PATH:/usr/local/heroku/bin
 export PATH=$PATH:~/Library/Python/3.5/bin
 export PATH="$PATH:`yarn global bin`"
 
-
+# ------------------------------------
+# Python
+# ------------------------------------
 # Simple python webserver
 function server() {
     local port="${1:-8000}"
@@ -76,11 +87,23 @@ function server() {
 }
 alias server=server
 
+
+# Virtual Env
+alias ve2='virtualenv -p python2 .'
+alias ve3='virtualenv -p python3 .'
+alias vestart='source ./bin/activate'
+alias vestop='deactivate'
+
+
+
+
 # ------------------------------------
 # General
 # ------------------------------------
 alias ea='st ~/.zshrc'
 alias sa='source ~/.zshrc'
+alias web='cd ~/Documents/projects/web'
+alias design='cd ~/Documents/projects/design'
 
 
 # ------------------------------------
