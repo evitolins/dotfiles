@@ -1,9 +1,9 @@
 divvy
-kaleidoscope
-tower2
+font-source-code-pro-for-powerline
+google-chrome
 iterm2
+kaleidoscope
 sequel-pro
 sublime-text
-google-chrome
+tower2
 zoomus
-homebrew/cask-fonts/font-source-code-pro-for-powerline

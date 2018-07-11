@@ -1,5 +1,4 @@
-caskroom/cask
-caskroom/versions
+homebrew/cask
+homebrew/cask-fonts
 homebrew/cask-versions
-homebrew/dupes
-homebrew/php
+homebrew/core
