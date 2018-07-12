@@ -1,0 +1,4 @@
+{
+  // ksdiff (Kaleidoscope)
+  "cmd": ["ksdiff", "$file1", "$file2"]
+}

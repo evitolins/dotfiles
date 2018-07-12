@@ -1,0 +1,42 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Advanced CSV",
+		"Alignment",
+		"Anaconda",
+		"AutoDocstring",
+		"Babel",
+		"Better CoffeeScript",
+		"BlameHighlighter",
+		"BracketHighlighter",
+		"DocBlockr",
+		"Emmet",
+		"FuzzyFilePath",
+		"GitGutter",
+		"Indent XML",
+		"InsertDate",
+		"JSHint",
+		"JSHint Gutter",
+		"JSONLint",
+		"Liquid",
+		"Markdown Extended",
+		"Markdown HTML Preview",
+		"MarkdownLivePreview",
+		"MarkdownPreview",
+		"MayaSublime",
+		"Monokai Extended",
+		"Package Control",
+		"Pretty JSON",
+		"RawLineEdit",
+		"SFTP",
+		"SublimeLinter-contrib-htmllint",
+		"SublimeLinter-php",
+		"SublimeLinter-phplint",
+		"Text Pastry",
+		"Vuejs Complete Package"
+	]
+}
