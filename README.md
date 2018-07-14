@@ -79,3 +79,14 @@ export HOMEBREW_GITHUB_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX
 ### Others...
 Check the `prefs` directory for more application preferences, installation scripts and documentation.
 
+
+
+
+
+------------------
+
+#### Reference and Inspiration
+- https://github.com/mihaliak/dotfiles
+- https://github.com/rootbeersoup/dotfiles
+
+
