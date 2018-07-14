@@ -61,7 +61,7 @@ fi
 
 
 install_homebrew () {
-    echo "Sorry, homebrew install is not yet available with this script."
+    /bin/bash ~/.dotfiles/homebrew/restore.sh
 }
 
 install_ruby_gems () {
@@ -72,9 +72,7 @@ install_ruby_gems () {
 }
 
 install_npm_globals () {
-    # npm install -g bower
-    # npm install -g grunt-cli
-    echo "Sorry, npm_globals install is not yet available with this script."
+    /bin/bash ~/.dotfiles/npm/restore.sh
 }
 
 
