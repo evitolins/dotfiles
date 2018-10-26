@@ -1,12 +1,10 @@
 bower
-browserify
-coffee-script
 css-color-extractor-cli
 grunt
-grunt-cli
-gulp    
+gulp
 http-server
 json-diff
+npm
 uglify-js
 uncss
 vue-cli
