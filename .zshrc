@@ -41,7 +41,16 @@ DEFAULT_USER="ev"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow sublime osx brew bower Composer autojump)
+plugins=()
+plugins+=(autojump)
+plugins+=(bower)
+plugins+=(brew)
+plugins+=(Composer)
+plugins+=(git)
+plugins+=(git-flow)
+plugins+=(osx)
+plugins+=(sublime)
+plugins+=(zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
