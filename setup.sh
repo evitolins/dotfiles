@@ -114,7 +114,7 @@ if [[ $platform == 'osx' ]]; then
     done
 fi
 
-# 5) Optionally installs npm globals
+# 5) Optionally installs npm globals (NOTE: node & npm is installed via homebrew)
 while true; do
     read -p "Do you wish to install npm globals? (y/n) " yn
     case $yn in

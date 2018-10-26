@@ -3,6 +3,21 @@ dotfiles
 Linux/OSX personal workspace
 
 
+
+Summary
+-------------------------------------------------------------------------------
+This dotfiles collection is geared toward web and graphics development
+workflows on MacOS.
+
+It manages the following features...
+
+- oh-my-zsh installation
+- homebrew, formulas and casks installation
+- npm globals installation
+- various customized settings for installed software
+
+
+
 Installation
 -------------------------------------------------------------------------------
 #### Dotfiles
@@ -84,12 +99,8 @@ Check the `prefs` directory for more application preferences, installation scrip
 
 
 
-
-
-------------------
-
-#### Reference and Inspiration
+Reference and Inspiration
+-------------------------------------------------------------------------------
 - https://github.com/mihaliak/dotfiles
 - https://github.com/rootbeersoup/dotfiles
-
 
