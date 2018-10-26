@@ -20,14 +20,29 @@ cd ~/.dotfiles
 
 Applications and Utilities
 -------------------------------------------------------------------------------
-__Homebrew__
+### Homebrew
 
+
+#### Managing Applications
 There are scripts to both backup and restore the homebrew environment.
 
 - Backup `cd ~/.dotfiles/homebrew && ./backup.sh`
 - Restore `cd ~/.dotfiles/homebrew && ./restore.sh`
 
-> **brew-cask** installation requires **Xcode** to be previously installed. Make sure to install a version that is supported by your current OSX
+
+#### Enable faster Github Access
+Homebrew uses Github for information, and will limit speed/access without providing a Github token.
+
+1. Create a Github token from `https://github.com/settings/tokens` _(no scopes selected is okay)_
+2. Add env var to login script `~/.zshrc`
+
+```bash
+# Github Token
+export HOMEBREW_GITHUB_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+> NOTE: Saving to `~/.zshrc` is not the best idea, since it is under version control. Will move this to a ignored file soon.
+
 
 
 
@@ -62,18 +77,6 @@ _Homebrew should now install the preferred font `Source Code Pro for Powerline` 
 > 3. Delete cloned repo unless you need it hanging around.
  -->
 
-
-### Github
-#### Add Token
-This allows Github API access at a faster rate.
-
-1. Obtain Github token from `https://github.com/settings/tokens`
-2. Add env var to login script `~/.zshrc`
-
-```
-# Github Token
-export HOMEBREW_GITHUB_API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX
-```
 
 
 ### Others...
