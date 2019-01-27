@@ -115,6 +115,22 @@ alias web='cd ~/Documents/projects/web'
 alias design='cd ~/Documents/projects/design'
 
 
+# Create patch file from all staged items in current git repo.
+# The file name will be labeled with the current commit hash.
+gitpatch() {
+    hash="$(git rev-parse --short HEAD)"
+
+    if [ -z "$hash" ]
+    then
+          echo "No git commit hash was found"
+    else
+        git diff --cached --binary > ${hash}.patch
+    fi
+}
+
+
+
+
 # ------------------------------------
 # Docker alias and function
 # ------------------------------------
