@@ -4,6 +4,8 @@ font-source-code-pro-for-powerline
 google-chrome
 iterm2
 kaleidoscope
+qlmarkdown
+quicklook-json
 sequel-pro
 slack
 sublime-text
