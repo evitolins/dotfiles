@@ -1,6 +1,5 @@
 divvy
 docker
-filezilla
 font-source-code-pro-for-powerline
 google-chrome
 iterm2
