@@ -5,9 +5,11 @@ google-chrome
 iterm2
 kaleidoscope
 qlmarkdown
+qlstephen
 quicklook-json
 sequel-pro
 slack
+sublime-merge
 sublime-text
 tower2
 zoomus
