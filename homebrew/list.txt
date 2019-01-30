@@ -1,3 +1,4 @@
+awscli
 composer
 git-extras
 git-flow
