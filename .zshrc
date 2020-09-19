@@ -128,6 +128,10 @@ gitpatch() {
     fi
 }
 
+newrepo() {
+	local name=$1
+	mkdir $name && cd $name && echo "# ${name}" > "README.md" && git init && git add . && git commit -m "initial commit"
+}
 
 
 
