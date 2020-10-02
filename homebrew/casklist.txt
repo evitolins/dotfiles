@@ -4,6 +4,7 @@ font-source-code-pro-for-powerline
 google-chrome
 iterm2
 kaleidoscope
+ngrok
 postman
 qlmarkdown
 qlstephen
