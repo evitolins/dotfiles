@@ -1,12 +1,4 @@
-bower
-css-color-extractor-cli
-grunt
-gulp
 http-server
 json-diff
 npm
-uglify-js
-uncss
-vue-cli
-watchify
-webpack
+yarn
