@@ -9,6 +9,4 @@ else
      echo "Homebrew already installed"
 fi
 
-cat tap.txt | xargs -L 1 brew tap
-cat list.txt | xargs -L 1 brew install
-cat casklist.txt | xargs -L 1 brew cask install
+brew bundle install
