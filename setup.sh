@@ -1,26 +1,22 @@
 #!/bin/bash
 ############################
-# Edited from:
-# @https://raw.github.com/michaeljsmalley/dotfiles/master/makesymlinks.sh
-# 
-# install.sh
 # This script:
-#   1) Archives any existing bash and zshrc files
-#   2) Creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-#   3) Optionally installs oh-my-zsh
-#   4) Optionally installs homebrew and caskroom apps
-#   5) Optionally installs npm globals
+#   - Archives any existing bash and zshrc files
+#   - Creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+#   - Optionally installs oh-my-zsh
+#   - Optionally installs homebrew
+#   - Optionally installs nvm and nodejs
+#   - Optionally installs npm globals
 ############################
 
 ########## Variables
-
 timestamp=$(date +%Y%m%d_%H%M%S)
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old/$timestamp  # old dotfiles backup directory
 files=".zshrc .bashrc .bash_profile .gitconfig .gitignore_global .gitk"    # list of files/folders to symlink in homedir
-platform='unknown'
 
 ## OS Detection
+platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
@@ -32,11 +28,23 @@ fi
 
 
 ########## Functions
+backup_and_link_configs () {
+    echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
+    mkdir -p $olddir
+    for file in $files; do
+        # Archive any existing bash and zshrc files
+        echo "Archiving $file -> $olddir"
+        mv ~/$file $olddir/
+        # Create symlinks from the home directory to any desired dotfiles in ~/dotfiles
+        echo "Creating symlink to $file in home directory."
+        ln -s $dir/$file ~/$file
+    done
+}
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-    # Clone my oh-my-zsh repository from GitHub only if it isn't already present
+    # Use oh-my-zsh installer, if missing
     if [[ ! -d ~/.oh-my-zsh/ ]]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
@@ -70,56 +78,43 @@ install_ruby_gems () {
     echo "Sorry, ruby_gems install is not yet available with this script."
 }
 
+install_nvm () {
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    source ~/.zshrc
+    nvm install node && nvm cache clear
+}
+
 install_npm_globals () {
     /bin/bash ~/.dotfiles/npm/restore.sh
 }
 
-
-
-
-########## Tasks
-
-# 1) Archives any existing bash and zshrc files
-# 2) Creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
-for file in $files; do
-    echo "Archiving $file -> $olddir"
-    mv ~/$file $olddir/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/$file
-done
-
-# 3) Optionally installs oh-my-zsh
-# @http://stackoverflow.com/questions/226703/how-do-i-prompt-for-input-in-a-linux-shell-script
-while true; do
-    read -p "Do you wish to install zsh? (y/n) " yn
-    case $yn in
-        [Yy]* ) install_zsh; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes[y] or no[n].";;
-    esac
-done
-
-# 4) Optionally installs homebrew and caskroom apps
-if [[ $platform == 'osx' ]]; then
+ask_user() {
+    local question="$1"
+    local function_to_run="$2"
+    
     while true; do
-        read -p "Do you wish to install homebrew? (y/n) " yn
+        read -p "$question (y/n): " yn
         case $yn in
-            [Yy]* ) install_homebrew; break;;
-            [Nn]* ) exit;;
-            * ) echo "Please answer yes[y] or no[n].";;
+            [Yy]* ) 
+                $function_to_run
+                break
+                ;;
+            [Nn]* ) 
+                break
+                ;;
+            * ) 
+                echo "Please answer yes[y] or no[n]."
+                ;;
         esac
     done
+}
+
+
+########## Prompt user for setup options...
+backup_and_link_configs
+ask_user "Do you wish to install oh-my-zsh?" install_zsh
+if [[ $platform == 'osx' ]]; then
+    ask_user "Do you wish to install homebrew?" install_homebrew
 fi
-
-# 5) Optionally installs npm globals (NOTE: node & npm is installed via homebrew)
-while true; do
-    read -p "Do you wish to install npm globals? (y/n) " yn
-    case $yn in
-        [Yy]* ) install_npm_globals; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes[y] or no[n].";;
-    esac
-done
-
+ask_user "Do you wish to install nvm and latest nodejs?" install_nvm
+ask_user "Do you wish to install npm globals?" install_npm_globals
