@@ -6,16 +6,16 @@ DEFAULT_USER="ev"
 plugins=()
 plugins+=(brew)
 plugins+=(git)
-# plugins+=(osx)
-# plugins+=(zsh-nvm)
+plugins+=(aws)
+plugins+=(gh)
 
 source $ZSH/oh-my-zsh.sh
 
 # ------------------------------------
 # MacOS
 # ------------------------------------
-# alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-# alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 
 # ------------------------------------

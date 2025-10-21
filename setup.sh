@@ -8,6 +8,8 @@
 #   - Optionally installs nvm and nodejs
 #   - Optionally installs npm globals
 ############################
+source "./utils.sh"
+
 
 ########## Variables
 timestamp=$(date +%Y%m%d_%H%M%S)
@@ -88,25 +90,8 @@ install_npm_globals () {
     /bin/bash ~/.dotfiles/npm/restore.sh
 }
 
-ask_user() {
-    local question="$1"
-    local function_to_run="$2"
-    
-    while true; do
-        read -p "$question (y/n): " yn
-        case $yn in
-            [Yy]* ) 
-                $function_to_run
-                break
-                ;;
-            [Nn]* ) 
-                break
-                ;;
-            * ) 
-                echo "Please answer yes[y] or no[n]."
-                ;;
-        esac
-    done
+clone_git_repos () {
+    /bin/bash ~/.dotfiles/repos/clone.sh
 }
 
 
@@ -118,3 +103,4 @@ if [[ $platform == 'osx' ]]; then
 fi
 ask_user "Do you wish to install nvm and latest nodejs?" install_nvm
 ask_user "Do you wish to install npm globals?" install_npm_globals
+ask_user "Do you wish to clone repos locally?" clone_git_repos

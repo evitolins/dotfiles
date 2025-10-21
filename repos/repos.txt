@@ -1,14 +1,12 @@
 git@github.com:health-and-beauty/chimeGrid.git
 git@github.com:scroll/comm.git
 git@github.com:evitolins/eriksssss.git
-https://github.com/evitolins/i-hate-snakes.git
+git@github.com:evitolins/i-hate-snakes.git
 git@github.com:evitolins/littleSynth.git
 git@github.com:evitolins/providence.git
-https://github.com/digitaldesignlabs/responsive-playing-cards.git
 git@github.com:evitolins/s3-archive.git
 git@github.com:evitolins/timeliner.git
 git@github.com:evitolins/website-aws-stack.git
-git@github.com:evitolins/website-driveallnight.git
 git@github.com:evitolins/website-driveallnight.git
 git@github.com:evitolins/website-eriksvitolins.git
 git@github.com:health-and-beauty/website-healthandbeauty.git
